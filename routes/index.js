@@ -4,10 +4,17 @@ const router = express.Router();
 const morgan = require('morgan');
 
 
+
 router.use(morgan(':method :url '));
 
 router.get('/', (request, response) => {
   response.send('It works!');
+})
+
+router.get('/test', (req, res)=>{
+  const people = [{name: 'Full'}, {name: 'Stacker'}, {name: 'Son'}];
+  res.render( 'index', {title: 'Hall of Fame', people: people} );
+
 })
 
 router.get('/news', (request, response) => {
