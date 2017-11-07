@@ -12,6 +12,8 @@ nunjucks.configure('views', {noCache: true});
 
 //Allows the app access to index.js in /routes
 app.use(express.static('./routes'))
+app.use(express.static('./stylesheets'))
+
 app.use(routes);
 
 app.listen(PORT, () => {
